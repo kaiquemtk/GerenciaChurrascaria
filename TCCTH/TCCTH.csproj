@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A688C77-7E48-4585-BB6C-CB7E4C7B0061}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TCCTH</RootNamespace>
+    <AssemblyName>TCCTH</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Danilo\Desktop\EXECUTAVEL TCC\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BE77284A7C2B88B7F4C65151058807B7B1C3DEF3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TCCTH_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administraçao\ConsultaDeContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administraçao\ConsultaDeContas.Designer.cs">
+      <DependentUpon>ConsultaDeContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administraçao\CadastroDeContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administraçao\CadastroDeContas.Designer.cs">
+      <DependentUpon>CadastroDeContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administraçao\PagamentoDeContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administraçao\PagamentoDeContas.Designer.cs">
+      <DependentUpon>PagamentoDeContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cardapio\Cardapio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cardapio\Cardapio.Designer.cs">
+      <DependentUpon>Cardapio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrar\CriarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrar\CriarUsuario.Designer.cs">
+      <DependentUpon>CriarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\CadastrarEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque\CadastrarEstoque.Designer.cs">
+      <DependentUpon>CadastrarEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\ConsultarEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque\ConsultarEstoque.Designer.cs">
+      <DependentUpon>ConsultarEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fechamento\Caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fechamento\Caixa.Designer.cs">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\CadastroDeFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\CadastroDeFornecedor.Designer.cs">
+      <DependentUpon>CadastroDeFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor\ConsultarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornecedor\ConsultarFornecedor.Designer.cs">
+      <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrar\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrar\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario\CadastroDeFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\CadastroDeFuncionario.Designer.cs">
+      <DependentUpon>CadastroDeFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario\Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionario\Consulta.Designer.cs">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administraçao\ConsultaDeContas.resx">
+      <DependentUpon>ConsultaDeContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administraçao\CadastroDeContas.resx">
+      <DependentUpon>CadastroDeContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administraçao\PagamentoDeContas.resx">
+      <DependentUpon>PagamentoDeContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cardapio\Cardapio.resx">
+      <DependentUpon>Cardapio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrar\CriarUsuario.resx">
+      <DependentUpon>CriarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\CadastrarEstoque.resx">
+      <DependentUpon>CadastrarEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\ConsultarEstoque.resx">
+      <DependentUpon>ConsultarEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fechamento\Caixa.resx">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\CadastroDeFornecedor.resx">
+      <DependentUpon>CadastroDeFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornecedor\ConsultarFornecedor.resx">
+      <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrar\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\CadastroDeFuncionario.resx">
+      <DependentUpon>CadastroDeFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funcionario\Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{d13f4ca3-a8c8-44ba-b8cb-c45d2079b273}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{7691ee70-5c2c-415d-b33b-8a0eea90bd2f}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1458264596_authorisation_lock_padlock_safe_password_privacy_security_icon-icons.com_55333 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1458264596_authorisation_lock_padlock_safe_password_privacy_security_icon-icons.com_55333.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter_41039.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1487086367-enter_81573.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1487086367-enter_815731.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter_410391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1487086367-enter_815732.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferencesdesktopdefaultapplications_104299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferencesdesktopdefaultapplications_1042991.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forceexit_103817.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forceexit_1038171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrar incone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\degrade.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marrom churras.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tcc churras.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tcc churras1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Barbecue_At_Will_#1_brand_usage_#2_created_by_logaster %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3ef4658c-001f-4d4c-bbdc-b7dd6e1a2dd8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forceexit_1038172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\678x2061.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2017-11-7--14-28-531.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2017-26-1djsjskak1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2018-09-04-21-33-561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add - Copia2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29 - Copia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGroundCozinha2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner-AlterarCategoria1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnConsultarVenda1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnPedidosDeHoje1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c8b9dd3cd5ca036cb81429ac9f2ed7e51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked %281%2911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%2911.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit - Copia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin-User-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issosim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exitsim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fornecedor123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixaregistradora.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1458264596_authorisation_lock_padlock_safe_password_privacy_security_icon-icons.com_55333 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1458264596_authorisation_lock_padlock_safe_password_privacy_security_icon-icons.com_553331.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1485476044-artboard-1_78532.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1485476044-artboard-1_785321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banking_00017_A_icon-icons.com_59837.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banking_00017_A_icon-icons.com_59837 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1495815236-jd07_84584.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-amex-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1495815236-jd07_845841.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1495815276-jd05_84594.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1490135017-visa_82256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\w.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

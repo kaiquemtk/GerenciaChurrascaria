@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 namespace BLL
 {
    public class Login
@@ -37,6 +38,8 @@ namespace BLL
             set { _PerguntaSecretaId = value; }
         }
         private string _RespostaPerguntaSecreta;
+
+        private int idfuncionario;
 
 
         DAO.ConexaoString C = new DAO.ConexaoString();
@@ -95,6 +98,7 @@ namespace BLL
                 _IdLogin = value;
             }
         }
+        private int funcionarioid;
 
         public string Nome
         {
@@ -190,7 +194,31 @@ namespace BLL
             set { _statusLogin = value; }
         }
 
-        
+        public int Funcionarioid
+        {
+            get
+            {
+                return funcionarioid;
+            }
+
+            set
+            {
+                funcionarioid = value;
+            }
+        }
+
+        public int Idfuncionario
+        {
+            get
+            {
+                return idfuncionario;
+            }
+
+            set
+            {
+                idfuncionario = value;
+            }
+        }
 
         public void Incluir()
         {
@@ -246,32 +274,23 @@ namespace BLL
 
         public bool Logar()
         {
-
             DAO.ConexaoString objConexao = new DAO.ConexaoString();
 
-            SQL = "select * From Tb_Login where  usuario = '" + _Nome + "' AND senha='" + _Senha + "'  ";
-
+            SQL = "SELECT * FROM Tb_Login WHERE usuario = '" + _Nome + "' AND senha = '" + _Senha + "' AND status_Login = 1";
 
             dr = objConexao.RetornarDataReader(SQL);
 
-
-            dr.Read();
-            if (dr.HasRows)
+            if (dr.HasRows && dr.Read())
             {
-                //IdLogin = Convert.ToInt16(dr[0]);
-                Nome = dr[2].ToString();
-                Senha = dr[1].ToString();
-                //IdNivelAcesso = Convert.ToInt16(dr[1]);
-                //StatusLoginID = Convert.ToInt32(dr[4]);
+                Idfuncionario = Convert.ToInt32(dr["Id_Funcionario"]);
+                Nome = dr["usuario"].ToString();
+                Senha = dr["senha"].ToString();
+                IdNivelAcesso = Convert.ToInt32(dr["nivelAcesso"]);
 
-
-
-                
                 return true;
             }
             else
             {
-                
                 return false;
             }
         }
@@ -290,7 +309,7 @@ namespace BLL
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "SELECT * FROM TBLOGIN WHERE idLogin = " + _IdLogin;
+                SQL = "SELECT * FROM tb_Login WHERE Id_Login = " +IdLogin;
                 return c.RetornarDataReader(SQL);
             }
             catch (Exception ex)

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CHURRASTRABALHODataSet15" targetNamespace="http://tempuri.org/CHURRASTRABALHODataSet15.xsd" xmlns:mstns="http://tempuri.org/CHURRASTRABALHODataSet15.xsd" xmlns="http://tempuri.org/CHURRASTRABALHODataSet15.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CHURRASTRABALHOConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CHURRASTRABALHOConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCCTH.Properties.Settings.GlobalReference.Default.CHURRASTRABALHOConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CardapioTableAdapter" GeneratorDataComponentClassName="CardapioTableAdapter" Name="Cardapio" UserDataComponentName="CardapioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CHURRASTRABALHOConnectionString (Settings)" DbObjectName="CHURRASTRABALHO.dbo.Cardapio" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Pessoa, ValorPessoa FROM dbo.Cardapio</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Pessoa" DataSetColumn="Pessoa" />
+              <Mapping SourceColumn="ValorPessoa" DataSetColumn="ValorPessoa" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CHURRASTRABALHODataSet15" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CHURRASTRABALHODataSet15" msprop:Generator_UserDSName="CHURRASTRABALHODataSet15">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cardapio" msprop:Generator_TableClassName="CardapioDataTable" msprop:Generator_TableVarName="tableCardapio" msprop:Generator_TablePropName="Cardapio" msprop:Generator_RowDeletingName="CardapioRowDeleting" msprop:Generator_RowChangingName="CardapioRowChanging" msprop:Generator_RowEvHandlerName="CardapioRowChangeEventHandler" msprop:Generator_RowDeletedName="CardapioRowDeleted" msprop:Generator_UserTableName="Cardapio" msprop:Generator_RowChangedName="CardapioRowChanged" msprop:Generator_RowEvArgName="CardapioRowChangeEvent" msprop:Generator_RowClassName="CardapioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pessoa" msprop:Generator_ColumnVarNameInTable="columnPessoa" msprop:Generator_ColumnPropNameInRow="Pessoa" msprop:Generator_ColumnPropNameInTable="PessoaColumn" msprop:Generator_UserColumnName="Pessoa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorPessoa" msprop:Generator_ColumnVarNameInTable="columnValorPessoa" msprop:Generator_ColumnPropNameInRow="ValorPessoa" msprop:Generator_ColumnPropNameInTable="ValorPessoaColumn" msprop:Generator_UserColumnName="ValorPessoa" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DAO
 {
-public class ConexaoString
+    public class ConexaoString
     {
         private static SqlConnection cn;
         private static SqlCommand cmd;
@@ -18,11 +20,11 @@ public class ConexaoString
         private static String SQL; //instrucao SQL
         private static DataTable dt;
         //criar a string de conexao com o banco de dados
-        // private static string Caminho = @"Data Source=LOCALHOST;User Id=GANACHEE;Password=280386;";
-        private static string Caminho = @"Server=DANILO-PC\SQLEXPRESS; Database = CHURRASCARIA ;User Id=churras; Password=123456;";
+        //private static string Caminho = @"Data Source=MATHEUS\SQLEXPRESS;User Id=sa;Password=123456;";
+        public static string Caminho = @"Data Source=HueLider\SQLEXPRESS;Initial Catalog=CHURRASTRABALHO;Integrated Security=True;";
         //private static string Caminho = @"Data source=Localhost; Database=Ganachee ;User Id=GANACHEE1;Password=280386;";
         //veja no site https://www.connectionstrings.com
-        
+
         public SqlConnection Conectar()
         {
             try
@@ -36,7 +38,8 @@ public class ConexaoString
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Erro ao conectar: " + ex.Message);
+                throw;
             }
         }
 
@@ -52,7 +55,7 @@ public class ConexaoString
             catch (Exception ex)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -76,7 +79,7 @@ public class ConexaoString
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -86,7 +89,7 @@ public class ConexaoString
         {
             try
             {
-                 SqlDataReader dr;
+                SqlDataReader dr;
 
 
                 SqlCommand cmd = new SqlCommand(Comando, Conectar());
@@ -98,7 +101,7 @@ public class ConexaoString
             catch (Exception ex)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -120,7 +123,7 @@ public class ConexaoString
             catch (Exception ex)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -143,7 +146,7 @@ public class ConexaoString
             catch (Exception ex)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -171,7 +174,7 @@ public class ConexaoString
             catch (Exception ex)
             {
 
-                throw ex;
+                throw;
             }
         }
 
@@ -187,11 +190,11 @@ public class ConexaoString
             }
             catch (SqlException exAce)
             {
-                throw exAce;
+                throw;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -206,11 +209,11 @@ public class ConexaoString
             }
             catch (SqlException exAce)
             {
-                throw exAce;
+                throw;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -234,7 +237,7 @@ public class ConexaoString
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             finally
             {
@@ -261,7 +264,7 @@ public class ConexaoString
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
 
         }
@@ -295,6 +298,3 @@ public class ConexaoString
         }
     }
 }
-    
-    
-

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TCCTH</RootNamespace>
     <AssemblyName>TCCTH</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -27,6 +27,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,18 +48,16 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BE77284A7C2B88B7F4C65151058807B7B1C3DEF3</ManifestCertificateThumbprint>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TCCTH_TemporaryKey.pfx</ManifestKeyFile>
+    <AssemblyOriginatorKeyFile>TCCTHNEW.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <StartupObject>TCCTH.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,17 +84,137 @@
     <Compile Include="Administraçao\CadastroDeContas.Designer.cs">
       <DependentUpon>CadastroDeContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administraçao\PagamentoDeContas.cs">
+    <Compile Include="Cardapio\CadastroDeCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administraçao\PagamentoDeContas.Designer.cs">
-      <DependentUpon>PagamentoDeContas.cs</DependentUpon>
+    <Compile Include="Cardapio\CadastroDeCardapio.Designer.cs">
+      <DependentUpon>CadastroDeCardapio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cardapio\Cardapio.cs">
+    <Compile Include="Cardapio\ConsultaDeCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cardapio\Cardapio.Designer.cs">
-      <DependentUpon>Cardapio.cs</DependentUpon>
+    <Compile Include="Cardapio\ConsultaDeCardapio.Designer.cs">
+      <DependentUpon>ConsultaDeCardapio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CHURRASTRABALHODataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="Entrar\CriarUsuario.cs">
       <SubType>Form</SubType>
@@ -108,11 +228,11 @@
     <Compile Include="Estoque\CadastrarEstoque.Designer.cs">
       <DependentUpon>CadastrarEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estoque\ConsultarEstoque.cs">
+    <Compile Include="Estoque\Consultar Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estoque\ConsultarEstoque.Designer.cs">
-      <DependentUpon>ConsultarEstoque.cs</DependentUpon>
+    <Compile Include="Estoque\Consultar Estoque.Designer.cs">
+      <DependentUpon>Consultar Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Fechamento\Caixa.cs">
       <SubType>Form</SubType>
@@ -150,25 +270,55 @@
     <Compile Include="Funcionario\Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\NovoMenucs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelos\NovoMenucs.Designer.cs">
+      <DependentUpon>NovoMenucs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modelos\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto\CadastroDeProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto\CadastroDeProdutos.Designer.cs">
+      <DependentUpon>CadastroDeProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produto\ConsultarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produto\ConsultarProdutos.Designer.cs">
+      <DependentUpon>ConsultarProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\ConsultarFale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Web\ConsultarFale.Designer.cs">
+      <DependentUpon>ConsultarFale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Mensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Web\Mensagem.Designer.cs">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administraçao\ConsultaDeContas.resx">
       <DependentUpon>ConsultaDeContas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administraçao\CadastroDeContas.resx">
       <DependentUpon>CadastroDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administraçao\PagamentoDeContas.resx">
-      <DependentUpon>PagamentoDeContas.cs</DependentUpon>
+    <EmbeddedResource Include="Cardapio\CadastroDeCardapio.resx">
+      <DependentUpon>CadastroDeCardapio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cardapio\Cardapio.resx">
-      <DependentUpon>Cardapio.cs</DependentUpon>
+    <EmbeddedResource Include="Cardapio\ConsultaDeCardapio.resx">
+      <DependentUpon>ConsultaDeCardapio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entrar\CriarUsuario.resx">
       <DependentUpon>CriarUsuario.cs</DependentUpon>
@@ -176,8 +326,8 @@
     <EmbeddedResource Include="Estoque\CadastrarEstoque.resx">
       <DependentUpon>CadastrarEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estoque\ConsultarEstoque.resx">
-      <DependentUpon>ConsultarEstoque.cs</DependentUpon>
+    <EmbeddedResource Include="Estoque\Consultar Estoque.resx">
+      <DependentUpon>Consultar Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fechamento\Caixa.resx">
       <DependentUpon>Caixa.cs</DependentUpon>
@@ -197,8 +347,17 @@
     <EmbeddedResource Include="Funcionario\Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\NovoMenucs.resx">
+      <DependentUpon>NovoMenucs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modelos\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto\CadastroDeProdutos.resx">
+      <DependentUpon>CadastroDeProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produto\ConsultarProdutos.resx">
+      <DependentUpon>ConsultarProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -210,6 +369,279 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Web\ConsultarFale.resx">
+      <DependentUpon>ConsultarFale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Mensagem.resx">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ChaveTemporaria.snk" />
+    <None Include="CHURRASTRABALHODataSet.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet.xss">
+      <DependentUpon>CHURRASTRABALHODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet1.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet1.xss">
+      <DependentUpon>CHURRASTRABALHODataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet10.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet10.xss">
+      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet11.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet11.xss">
+      <DependentUpon>CHURRASTRABALHODataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet12.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet12.xss">
+      <DependentUpon>CHURRASTRABALHODataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet13.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet13.xss">
+      <DependentUpon>CHURRASTRABALHODataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet14.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet14.xss">
+      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet15.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet15.xss">
+      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet16.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet16.xss">
+      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet17.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet17.xss">
+      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet18.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet18.xss">
+      <DependentUpon>CHURRASTRABALHODataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet19.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet19.xss">
+      <DependentUpon>CHURRASTRABALHODataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet2.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet2.xss">
+      <DependentUpon>CHURRASTRABALHODataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet20.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet20.xss">
+      <DependentUpon>CHURRASTRABALHODataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet21.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet21.xss">
+      <DependentUpon>CHURRASTRABALHODataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet22.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet22.xss">
+      <DependentUpon>CHURRASTRABALHODataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet23.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet23.xss">
+      <DependentUpon>CHURRASTRABALHODataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet3.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet3.xss">
+      <DependentUpon>CHURRASTRABALHODataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet4.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet4.xss">
+      <DependentUpon>CHURRASTRABALHODataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet5.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet5.xss">
+      <DependentUpon>CHURRASTRABALHODataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet6.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet6.xss">
+      <DependentUpon>CHURRASTRABALHODataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet7.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet7.xss">
+      <DependentUpon>CHURRASTRABALHODataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet8.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet8.xss">
+      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet9.xsc">
+      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="CHURRASTRABALHODataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHURRASTRABALHODataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHURRASTRABALHODataSet9.xss">
+      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -219,6 +651,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TCCTHNEW.snk" />
+    <None Include="TCCTH_1_TemporaryKey.pfx" />
+    <None Include="TCCTH_NovaChave.pfx.snk" />
+    <None Include="TCCTH_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -272,7 +708,9 @@
   <ItemGroup>
     <None Include="Resources\exit.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\cash_40532 %281%29.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\degrade.jpg" />
   </ItemGroup>
@@ -463,6 +901,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_40532 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chipcard_icon-icons.com_51183.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chipcard_icon-icons.com_51183 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1490135017-visa_82256 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banking_00017_A_icon-icons.com_59837 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_restaurant_menu_128_28738.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_restaurant_menu_128_28738 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_icon-icons.com_53620.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power_icon-icons.com_53620 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2508643.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data grid view 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone confiarmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ae12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ae12ae.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

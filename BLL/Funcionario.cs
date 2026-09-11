@@ -5,17 +5,53 @@ using System.Text;
 using System.Data.SqlClient;
 
 using System.Data;
+using System.IO;
 
 namespace BLL
 {
     public class Funcionario
     {
 
-        private static string SQL;
-
         DAO.ConexaoString C = new DAO.ConexaoString();
 
+        private int idnivelacesso;
 
+
+        private static string SQL;
+        private int id;
+
+
+        private string cEP1;
+
+        private string uf1;
+
+
+        private string bairro11;
+
+        private string cidade1;
+
+
+        private string logradouro1;
+
+        
+
+        private int id_Funcionario;
+
+        private string usuario;
+
+        private string senha2;
+        private string senha1;
+
+        
+
+
+        private string nivelAcesso1;
+
+        private string senhaLogin;
+
+        private string statusLogin;
+
+        private string nomeCarg;
 
         private string _cpf;
 
@@ -43,7 +79,7 @@ namespace BLL
 
         private string _bairro;
 
-        private decimal _salario;
+        private string _salario;
 
         private string _cep;
 
@@ -63,7 +99,8 @@ namespace BLL
 
 
         public string cpf;
-       
+        private char sexo1;
+
 
         public string Endereço
         {
@@ -173,7 +210,7 @@ namespace BLL
             }
         }
 
-        public decimal Salario
+        public string Salario
         {
             get
             {
@@ -212,7 +249,7 @@ namespace BLL
             }
         }
 
-      
+
 
         public string Status_Func
         {
@@ -253,7 +290,7 @@ namespace BLL
             }
         }
 
-       
+
         public string Complemento
         {
             get
@@ -358,21 +395,217 @@ namespace BLL
             }
         }
 
+        public string NomeCarg
+        {
+            get
+            {
+                return nomeCarg;
+            }
+
+            set
+            {
+                nomeCarg = value;
+            }
+        }
+
+        public string StatusLogin
+        {
+            get
+            {
+                return statusLogin;
+            }
+
+            set
+            {
+                statusLogin = value;
+            }
+        }
+
+        public string SenhaLogin
+        {
+            get
+            {
+                return senhaLogin;
+            }
+
+            set
+            {
+                senhaLogin = value;
+            }
+        }
+
+        public string NivelAcesso1
+        {
+            get
+            {
+                return nivelAcesso1;
+            }
+
+            set
+            {
+                nivelAcesso1 = value;
+            }
+        }
+
+        public int Id_Funcionario
+        {
+            get
+            {
+                return id_Funcionario;
+            }
+
+            set
+            {
+                id_Funcionario = value;
+            }
+        }
+
+        public string Usuario
+        {
+            get
+            {
+                return usuario;
+            }
+
+            set
+            {
+                usuario = value;
+            }
+        }
+
+        public string Senha1
+        {
+            get
+            {
+                return senha1;
+            }
+
+            set
+            {
+                senha1 = value;
+            }
+        }
+
+        public string Senha2
+        {
+            get
+            {
+                return senha2;
+            }
+
+            set
+            {
+                senha2 = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Logradouro1
+        {
+            get
+            {
+                return logradouro1;
+            }
+
+            set
+            {
+                logradouro1 = value;
+            }
+        }
+
+        public string Cidade1
+        {
+            get
+            {
+                return cidade1;
+            }
+
+            set
+            {
+                cidade1 = value;
+            }
+        }
+
+        public string Bairro11
+        {
+            get
+            {
+                return bairro11;
+            }
+
+            set
+            {
+                bairro11 = value;
+            }
+        }
+
+        public string Uf1
+        {
+            get
+            {
+                return uf1;
+            }
+
+            set
+            {
+                uf1 = value;
+            }
+        }
+
+        public string CEP1
+        {
+            get
+            {
+                return cEP1;
+            }
+
+            set
+            {
+                cEP1 = value;
+            }
+        }
+
+        public int Idnivelacesso
+        {
+            get
+            {
+                return idnivelacesso;
+            }
+
+            set
+            {
+                idnivelacesso = value;
+            }
+        }
+
         public void IncluirFUNC()
         {
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "INSERT INTO Funcionario  (nome,cpf,rg,data_nascimento,sexo,telefone,bairro,celular,email,cep,numero,complemento,uf,cidade,logradouro,status_Func,salario,Id_Cargo) values( '" + _nome+ "','" + Cpf + "','" + _rg + "','" + _data_nascimento + "','" + _sexo + "','" + _telefone + "','"+_bairro+"','" + _celular + "','" + _email + "','" + _cep + "','" + _numero + "','" +_Complemento+ "','"+_uf+"','"+_cidade+"','"+_logradouro+"','1','" + _salario + "','" + Id_Cargo +"')";
+
+                SQL = "INSERT INTO Funcionario (nome, cpf, rg, data_nascimento, sexo, telefone, celular, email, cep, numero, complemento, status_Func, salario, Id_Cargo) " +
+                      "VALUES ('" + _nome + "', '" + Cpf + "', '" + _rg + "', '" + _data_nascimento + "', '" + _sexo + "', '" + _telefone + "', '" + _celular + "', '" + _email + "', '" + _cep + "', '" + _numero + "', '" + _Complemento + "', 1, '" + _salario + "', '" + Id_Cargo + "')";
+
                 c.ExecutarComando(SQL);
             }
             catch (Exception ex)
             {
                 throw ex;
-                
             }
         }
-
 
         public DataSet niveldeacesso(string texto)
         {
@@ -395,7 +628,7 @@ namespace BLL
             return c.RetornarDataSet(SQL);
 
         }
-         
+
 
 
         public SqlDataReader Consultar()
@@ -403,7 +636,13 @@ namespace BLL
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "SELECT * FROM Funcionario WHERE Id_Funcionario = " + _IdFuncionario;
+
+                // Fazemos o JOIN para buscar os dados do funcionário junto com o endereço da tabela CEP
+                SQL = "SELECT f.*, c.Logradouro, c.Cidade, c.Bairro, c.UF " +
+                      "FROM Funcionario f " +
+                      "INNER JOIN CEP c ON f.cep = c.CEP " +
+                      "WHERE f.Id_Funcionario = " + _IdFuncionario;
+
                 return c.RetornarDataReader(SQL);
             }
             catch (Exception ex)
@@ -420,9 +659,9 @@ namespace BLL
 
 
 
-                SQL = "UPDATE  FUNCIONARIO SET nome = '" + _nome + "',  cpf = '" + _cpf + "', rg = '" + _rg + "', data_nascimento ='" + _data_nascimento + "', sexo = '" + _sexo + "', telefone = '" + _telefone + "',bairro='" + _bairro + "', celular ='" + _celular + "' ,email = '" + _email + "',cep ='" + _cep + "',numero = '" + _numero + "',complemento = '" + _Complemento  + "',salario= '" + _salario + "',Id_Cargo='" + _Id_Cargo + "'  WHERE Id_Funcionario = " + _IdFuncionario;
+                SQL = "UPDATE  FUNCIONARIO SET nome = '" + _nome + "',  cpf = '" + _cpf + "', rg = '" + _rg + "', data_nascimento ='" + _data_nascimento + "', sexo = '" + _sexo + "', telefone = '" + _telefone + "', celular ='" + _celular + "' ,email = '" + _email + "',cep ='" + _cep + "',numero = '" + _numero + "',complemento = '" + _Complemento + "',salario= '" + _salario + "',Id_Cargo='" + _Id_Cargo + "'  WHERE Id_Funcionario = " + _IdFuncionario;
 
-                 c.ExecutarComando(SQL);
+                c.ExecutarComando(SQL);
             }
             catch (Exception ex)
             {
@@ -445,10 +684,52 @@ namespace BLL
             }
 
         }
+        public void incluircargo()
+        {
+            try
+            {
+                DAO.ConexaoString c = new DAO.ConexaoString();
+                SQL = "INSERT INTO Cargo (nome,status_Cargo) values( '" + nomeCarg + "','1')";
+                c.ExecutarComando(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
+        public DataSet ListarCarg(string texto)
+        {
+
+            SQL = "  SELECT nome,status_Cargo FROM Cargo where  status_Cargo = 1";
+
+            return C.retornarDataSet(SQL);
+
+
+
+        }
+
+
+        public void incluirLogin()
+        {
+            try
+            {
+                DAO.ConexaoString c = new DAO.ConexaoString();
+                SQL = "INSERT INTO tb_Login (status_Login,senha,usuario,nivelAcesso,Id_Funcionario,Id_NivelDeAcesso) values( '1','" + senhaLogin + "','" + usuario + "','1','" + Id + "','" + Idnivelacesso + "')";
+                c.ExecutarComando(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
+
+
+        
     }
-
-
-
-
 }
+
+    
+
 

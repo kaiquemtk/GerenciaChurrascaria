@@ -28,127 +28,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtSenha1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarUsuario));
+            this.button6 = new System.Windows.Forms.Button();
+            this.cboFuncionario = new System.Windows.Forms.ComboBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cHURRASTRABALHODataSet22 = new TCCTH.CHURRASTRABALHODataSet22();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cHURRASTRABALHODataSet12 = new TCCTH.CHURRASTRABALHODataSet12();
+            this.txtUsuario1 = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSenha2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btngravar = new System.Windows.Forms.Button();
+            this.funcionarioTableAdapter3 = new TCCTH.CHURRASTRABALHODataSet12TableAdapters.FuncionarioTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.nivelDeAcessoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cHURRASTRABALHODataSet23 = new TCCTH.CHURRASTRABALHODataSet23();
+            this.nivelDeAcessoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cHURRASTRABALHODataSet18 = new TCCTH.CHURRASTRABALHODataSet18();
+            this.nivelDeAcessoTableAdapter = new TCCTH.CHURRASTRABALHODataSet18TableAdapters.NivelDeAcessoTableAdapter();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Minimizar = new System.Windows.Forms.PictureBox();
+            this.Fechar = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.funcionarioTableAdapter4 = new TCCTH.CHURRASTRABALHODataSet22TableAdapters.FuncionarioTableAdapter();
+            this.nivelDeAcessoTableAdapter1 = new TCCTH.CHURRASTRABALHODataSet23TableAdapters.NivelDeAcessoTableAdapter();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivelDeAcessoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivelDeAcessoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fechar)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtUsuario
+            // button6
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(135, 50);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(120, 20);
-            this.txtUsuario.TabIndex = 0;
+            this.button6.BackgroundImage = global::TCCTH.Properties.Resources.eraser;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
+            this.button6.Location = new System.Drawing.Point(442, 320);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(71, 69);
+            this.button6.TabIndex = 2;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // txtSenha1
+            // cboFuncionario
             // 
-            this.txtSenha1.Location = new System.Drawing.Point(145, 98);
-            this.txtSenha1.Name = "txtSenha1";
-            this.txtSenha1.PasswordChar = '*';
-            this.txtSenha1.Size = new System.Drawing.Size(110, 20);
-            this.txtSenha1.TabIndex = 1;
-            this.txtSenha1.TextChanged += new System.EventHandler(this.txtSenha1_TextChanged);
+            this.cboFuncionario.FormattingEnabled = true;
+            this.cboFuncionario.Location = new System.Drawing.Point(44, 133);
+            this.cboFuncionario.Name = "cboFuncionario";
+            this.cboFuncionario.Size = new System.Drawing.Size(182, 21);
+            this.cboFuncionario.TabIndex = 3;
             // 
-            // label1
+            // bindingSource2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            this.bindingSource2.DataMember = "Funcionario";
+            this.bindingSource2.DataSource = this.cHURRASTRABALHODataSet22;
             // 
-            // label2
+            // cHURRASTRABALHODataSet22
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha";
+            this.cHURRASTRABALHODataSet22.DataSetName = "CHURRASTRABALHODataSet22";
+            this.cHURRASTRABALHODataSet22.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Funcionario";
+            this.bindingSource1.DataSource = this.cHURRASTRABALHODataSet12;
+            // 
+            // cHURRASTRABALHODataSet12
+            // 
+            this.cHURRASTRABALHODataSet12.DataSetName = "CHURRASTRABALHODataSet12";
+            this.cHURRASTRABALHODataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtUsuario1
+            // 
+            this.txtUsuario1.Location = new System.Drawing.Point(44, 188);
+            this.txtUsuario1.Name = "txtUsuario1";
+            this.txtUsuario1.Size = new System.Drawing.Size(108, 20);
+            this.txtUsuario1.TabIndex = 4;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(44, 233);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(108, 20);
+            this.txtSenha.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 144);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(40, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Confirmar Senha";
+            this.label3.Size = new System.Drawing.Size(99, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Funcionario";
             // 
-            // txtSenha2
+            // label5
             // 
-            this.txtSenha2.Location = new System.Drawing.Point(205, 144);
-            this.txtSenha2.Name = "txtSenha2";
-            this.txtSenha2.PasswordChar = '*';
-            this.txtSenha2.Size = new System.Drawing.Size(110, 20);
-            this.txtSenha2.TabIndex = 5;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
+            this.label5.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(40, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Usuario";
             // 
-            // button1
+            // label6
             // 
-            this.button1.BackgroundImage = global::TCCTH.Properties.Resources.save;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Tan;
-            this.button1.Location = new System.Drawing.Point(69, 254);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 77);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
+            this.label6.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(40, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 19);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Senha";
             // 
-            // button2
+            // btngravar
             // 
-            this.button2.BackgroundImage = global::TCCTH.Properties.Resources.back;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Tan;
-            this.button2.Location = new System.Drawing.Point(476, 254);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 77);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btngravar.BackgroundImage = global::TCCTH.Properties.Resources.save;
+            this.btngravar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btngravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btngravar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
+            this.btngravar.Location = new System.Drawing.Point(342, 320);
+            this.btngravar.Name = "btngravar";
+            this.btngravar.Size = new System.Drawing.Size(66, 69);
+            this.btngravar.TabIndex = 9;
+            this.btngravar.UseVisualStyleBackColor = true;
+            this.btngravar.Click += new System.EventHandler(this.btngravar_Click);
             // 
-            // button3
+            // funcionarioTableAdapter3
             // 
-            this.button3.BackgroundImage = global::TCCTH.Properties.Resources.eraser;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Tan;
-            this.button3.Location = new System.Drawing.Point(218, 254);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 77);
-            this.button3.TabIndex = 10;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.funcionarioTableAdapter3.ClearBeforeFill = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.nivelDeAcessoBindingSource1;
+            this.comboBox2.DisplayMember = "Nome";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(287, 133);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.ValueMember = "Id_NivelDeAcesso";
+            // 
+            // nivelDeAcessoBindingSource1
+            // 
+            this.nivelDeAcessoBindingSource1.DataMember = "NivelDeAcesso";
+            this.nivelDeAcessoBindingSource1.DataSource = this.cHURRASTRABALHODataSet23;
+            // 
+            // cHURRASTRABALHODataSet23
+            // 
+            this.cHURRASTRABALHODataSet23.DataSetName = "CHURRASTRABALHODataSet23";
+            this.cHURRASTRABALHODataSet23.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nivelDeAcessoBindingSource
+            // 
+            this.nivelDeAcessoBindingSource.DataMember = "NivelDeAcesso";
+            this.nivelDeAcessoBindingSource.DataSource = this.cHURRASTRABALHODataSet18;
+            // 
+            // cHURRASTRABALHODataSet18
+            // 
+            this.cHURRASTRABALHODataSet18.DataSetName = "CHURRASTRABALHODataSet18";
+            this.cHURRASTRABALHODataSet18.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nivelDeAcessoTableAdapter
+            // 
+            this.nivelDeAcessoTableAdapter.ClearBeforeFill = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
+            this.label7.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(283, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 19);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Nivel De Acesso";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
+            this.pictureBox1.Location = new System.Drawing.Point(24, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(549, 215);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(40, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 19);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Cadastro de login";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // Minimizar
+            // 
+            this.Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Minimizar.Image")));
+            this.Minimizar.Location = new System.Drawing.Point(574, 12);
+            this.Minimizar.Name = "Minimizar";
+            this.Minimizar.Size = new System.Drawing.Size(20, 20);
+            this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Minimizar.TabIndex = 37;
+            this.Minimizar.TabStop = false;
+            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
+            // 
+            // Fechar
+            // 
+            this.Fechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Fechar.Image = ((System.Drawing.Image)(resources.GetObject("Fechar.Image")));
+            this.Fechar.Location = new System.Drawing.Point(600, 12);
+            this.Fechar.Name = "Fechar";
+            this.Fechar.Size = new System.Drawing.Size(20, 20);
+            this.Fechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Fechar.TabIndex = 36;
+            this.Fechar.TabStop = false;
+            this.Fechar.Click += new System.EventHandler(this.Fechar_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::TCCTH.Properties.Resources.back;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
+            this.button4.Location = new System.Drawing.Point(537, 313);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 76);
+            this.button4.TabIndex = 137;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // funcionarioTableAdapter4
+            // 
+            this.funcionarioTableAdapter4.ClearBeforeFill = true;
+            // 
+            // nivelDeAcessoTableAdapter1
+            // 
+            this.nivelDeAcessoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBox1.Location = new System.Drawing.Point(44, 259);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(93, 17);
+            this.checkBox1.TabIndex = 138;
+            this.checkBox1.Text = "Mostrar senha";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // CriarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(572, 352);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtSenha2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(641, 409);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Minimizar);
+            this.Controls.Add(this.Fechar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtUsuario1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cboFuncionario);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSenha1);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btngravar);
+            this.Controls.Add(this.button6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CriarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CriarUsuario";
+            this.Load += new System.EventHandler(this.CriarUsuario_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivelDeAcessoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nivelDeAcessoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,10 +351,52 @@
         private System.Windows.Forms.TextBox txtSenha1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSenha2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox1;
+       private CHURRASTRABALHODataSet1 cHURRASTRABALHODataSet1;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
+        private CHURRASTRABALHODataSet1TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private CHURRASTRABALHODataSet2 cHURRASTRABALHODataSet2;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource1;
+        private CHURRASTRABALHODataSet2TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter1;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource2;
+        private System.Windows.Forms.BindingSource cHURRASCARIADataSetBindingSource;
+        private CHURRASTRABALHODataSet cHURRASTRABALHODataSet;
+        private System.Windows.Forms.BindingSource cHURRASTRABALHODataSetBindingSource;
+        private CHURRASTRABALHODataSet5 cHURRASTRABALHODataSet5;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource3;
+        private CHURRASTRABALHODataSet5TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter2;
+       
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox cboFuncionario;
+        private System.Windows.Forms.TextBox txtUsuario1;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btngravar;
+        private CHURRASTRABALHODataSet12 cHURRASTRABALHODataSet12;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private CHURRASTRABALHODataSet12TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private CHURRASTRABALHODataSet18 cHURRASTRABALHODataSet18;
+        private System.Windows.Forms.BindingSource nivelDeAcessoBindingSource;
+        private CHURRASTRABALHODataSet18TableAdapters.NivelDeAcessoTableAdapter nivelDeAcessoTableAdapter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox Minimizar;
+        private System.Windows.Forms.PictureBox Fechar;
+        private System.Windows.Forms.Button button4;
+        private CHURRASTRABALHODataSet22 cHURRASTRABALHODataSet22;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private CHURRASTRABALHODataSet22TableAdapters.FuncionarioTableAdapter funcionarioTableAdapter4;
+        private CHURRASTRABALHODataSet23 cHURRASTRABALHODataSet23;
+        private System.Windows.Forms.BindingSource nivelDeAcessoBindingSource1;
+        private CHURRASTRABALHODataSet23TableAdapters.NivelDeAcessoTableAdapter nivelDeAcessoTableAdapter1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

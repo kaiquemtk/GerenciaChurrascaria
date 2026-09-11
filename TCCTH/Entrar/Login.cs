@@ -50,15 +50,60 @@ namespace TCCTH
 
                     objLogin.Nome = usuario;
                     objLogin.Senha = senha;
-                    resultadoPesquisa = objLogin.Logar(); if (resultadoPesquisa == true)
-                    {
-                        Modelos.Principal princip = new Modelos.Principal();
-                        princip.Show();
-                    }
 
-                }
-                else
-                {
+                    if (txtNome.Text == string.Empty)
+                    {
+                        MessageBox.Show("Campo Usuario vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if (txtSenha.Text == string.Empty)
+                    {
+                        MessageBox.Show("Campo Senha vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                   
+
+                        resultadoPesquisa = objLogin.Logar();
+                    if (resultadoPesquisa == true)
+                    {
+                        txtidlogin.Text = Convert.ToString(objLogin.Idfuncionario);
+                        if (objLogin.IdNivelAcesso ==1)
+                        {
+                            Modelos.NovoMenu princip = new Modelos.NovoMenu(txtidlogin.Text);
+                           
+                            this.Hide();
+                            princip.Show();
+                        }
+                        if (objLogin.IdNivelAcesso == 2)
+                        {
+                            txtidlogin.Text = Convert.ToString(objLogin.Idfuncionario);
+                            Modelos.NovoMenu princip = new Modelos.NovoMenu(txtidlogin.Text);
+                            princip.btnFuncionario.Enabled = false;
+                           
+                            princip.btnFornecedor.Enabled = false;
+                            princip.btnEstoque.Enabled = false;
+                            princip.btnConta.Enabled = false;
+                            princip.btncardapio.Enabled = false;
+                            princip.button1.Enabled = false;
+
+                            
+                            
+
+
+                            this.Hide();
+                            princip.Show();
+                            
+                        }
+                       // else
+                        //{
+                            //MessageBox.Show("USUÁRIO/SENHA INCORRETO OU VOCÊ NÃO TEM ACESSO AO SISTEMA");
+                       // }
+                                
+                                }
+
+                 }
+                  else
+                 {
                             MessageBox.Show("USUÁRIO/SENHA INCORRETO OU VOCÊ NÃO TEM ACESSO AO SISTEMA");
                    // MessageBox.Show("");
 
@@ -117,6 +162,33 @@ namespace TCCTH
                 
                 
             }
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
+
+        private void Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
     }

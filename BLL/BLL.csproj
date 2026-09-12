@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cardapio.cs" />
     <Compile Include="Cep.cs" />
     <Compile Include="Endereço.cs" />
     <Compile Include="Fornecedor.cs" />

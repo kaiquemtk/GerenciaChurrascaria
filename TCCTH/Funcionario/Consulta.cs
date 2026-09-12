@@ -281,7 +281,7 @@ namespace TCCTH.Funcionario
                 {
                     func.Codigo = Convert.ToInt32(this.dgv.CurrentRow.Cells["id_funcionario"].Value);
                 }
-                func.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+                func.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
                 func.Show();
                 func.Text = "Alterar Cadastro De Funcionario";
 
@@ -303,7 +303,7 @@ namespace TCCTH.Funcionario
                     func.txtComplemento.Enabled = false;
                     func.txtDataNasc.Enabled = false;
                     func.txtEmail.Enabled = false;
-                    func.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Consulta);
+                    func.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Consulta);
                     func.Text = "Consultar Cadastro De Funcionario";
                 }
             }
@@ -320,7 +320,7 @@ namespace TCCTH.Funcionario
             {
                 func.Codigo = Convert.ToInt32(this.dgv.CurrentRow.Cells["id_funcionario"].Value);
             }
-            func.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+            func.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
             this.Hide();
             func.Show();
         }

@@ -131,7 +131,7 @@ namespace TCCTH.Fornecedor
             if (sender == this.btnEditar || sender == this.btnPesquisar)
             {
                 fornec.Codigo = Convert.ToInt32(this.dgvForn.CurrentRow.Cells[0].Value);
-                fornec.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+                fornec.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
                 // func.txtNomeProduto.Enabled = false;
                 //func.bAlterarPrato.Visible = true;
                 //fornec.Show();
@@ -151,7 +151,7 @@ namespace TCCTH.Fornecedor
                     fornec.txtNumero.Enabled = false;
                     fornec.txtUF.Enabled = false;
                     fornec.txtBairro.Enabled = false;
-                    fornec.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Consulta);
+                    fornec.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Consulta);
                     fornec.Text = "Consultar Cadastro De Fornecedor";
                 }
 
@@ -166,7 +166,7 @@ namespace TCCTH.Fornecedor
             Fornecedor.CadastroFornecedor func = new Fornecedor.CadastroFornecedor();
             func.txtIdFornec.Text = Convert.ToString(this.dgvForn.CurrentRow.Cells[0].Value);
             func.Codigo = Convert.ToInt32(this.dgvForn.CurrentRow.Cells[0].Value);
-            func.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+            func.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
             // func.txtNomeProduto.Enabled = false;
             //func.bAlterarPrato.Visible = true;
             this.Hide();

@@ -60,16 +60,16 @@ namespace TCCTH.Modelos
         private void Maximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            Restaurar.Visible = true;
-            Maximizar.Visible = false;
+            // Restaurar.Visible = true;
+            //Maximizar.Visible = false;
 
         }
 
         private void Restaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            Restaurar.Visible = false;
-            Maximizar.Visible = true;
+            //Restaurar.Visible = false;
+           // Maximizar.Visible = true;
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
@@ -132,13 +132,7 @@ namespace TCCTH.Modelos
             consultarforne.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Fechamento.Caixa caixa1 = new Fechamento.Caixa(txtidlogin.Text);
-            this.Hide();
-
-            caixa1.ShowDialog();
-        }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -147,19 +141,9 @@ namespace TCCTH.Modelos
             contas.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Cardapio.ConsultaDeCardapio show = new Cardapio.ConsultaDeCardapio();
-            show.Show();
-        }
+        
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Produto.ConsultarProdutos prod = new Produto.ConsultarProdutos();
-            this.Hide();
-            prod.Show();
-        }
-
+        
         private void button3_Click_1(object sender, EventArgs e)
         {
             Login log = new Login();
@@ -174,11 +158,20 @@ namespace TCCTH.Modelos
             cria.Show();
         }
 
-        private void btnMensagem_Click(object sender, EventArgs e)
+        private void txtidlog_TextChanged(object sender, EventArgs e)
         {
-            Web.ConsultarFale fale = new Web.ConsultarFale();
-            this.Hide();
-            fale.Show();
+
+        }
+
+        private void Minimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void Fechar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

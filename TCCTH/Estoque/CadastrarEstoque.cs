@@ -74,7 +74,7 @@ namespace TCCTH
                 // CarregarCampos();
 
 
-                if (Operação != Convert.ToByte(BLL.Funcoesgerais.Operação.Inclusao))
+                if (Operação != Convert.ToByte(BLL.ValidarCPF.Operação.Inclusao))
                 {
                     BLL.Estoque estoq = new BLL.Estoque();
                     SqlDataReader dr;

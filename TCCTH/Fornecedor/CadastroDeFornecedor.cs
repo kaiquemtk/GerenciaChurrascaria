@@ -70,7 +70,7 @@ namespace TCCTH.Fornecedor
         {
             try
             {
-                if (Operação != Convert.ToByte(BLL.Funcoesgerais.Operação.Inclusao))
+                if (Operação != Convert.ToByte(BLL.ValidarCPF.Operação.Inclusao))
                 {
                     BLL.Fornecedor Forn = new BLL.Fornecedor();
                     SqlDataReader dr;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BLL
 {
-    public  class Funcoesgerais
+    public  class ValidarCPF
     {
         
         public enum Operação : byte

@@ -374,7 +374,7 @@ namespace TCCTH.Funcionario
             {
                 this.cargoTableAdapter.Fill(this.cHURRASTRABALHODataSet11.Cargo);
 
-                if (Operação != Convert.ToByte(BLL.Funcoesgerais.Operação.Inclusao))
+                if (Operação != Convert.ToByte(BLL.ValidarCPF.Operação.Inclusao))
                 {
                     BLL.Funcionario Func = new BLL.Funcionario();
                     SqlDataReader dr;

@@ -72,29 +72,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administraçao\ConsultaDeContas.cs">
+    <Compile Include="Contas a pagar\ConsultaDeContas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administraçao\ConsultaDeContas.Designer.cs">
+    <Compile Include="Contas a pagar\ConsultaDeContas.Designer.cs">
       <DependentUpon>ConsultaDeContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administraçao\CadastroDeContas.cs">
+    <Compile Include="Contas a pagar\CadastroDeContas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administraçao\CadastroDeContas.Designer.cs">
+    <Compile Include="Contas a pagar\CadastroDeContas.Designer.cs">
       <DependentUpon>CadastroDeContas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cardapio\CadastroDeCardapio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cardapio\CadastroDeCardapio.Designer.cs">
-      <DependentUpon>CadastroDeCardapio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cardapio\ConsultaDeCardapio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cardapio\ConsultaDeCardapio.Designer.cs">
-      <DependentUpon>ConsultaDeCardapio.cs</DependentUpon>
     </Compile>
     <Compile Include="CHURRASTRABALHODataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -216,10 +204,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Entrar\CriarUsuario.cs">
+    <Compile Include="Login\CriarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrar\CriarUsuario.Designer.cs">
+    <Compile Include="Login\CriarUsuario.Designer.cs">
       <DependentUpon>CriarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Estoque\CadastrarEstoque.cs">
@@ -234,12 +222,6 @@
     <Compile Include="Estoque\Consultar Estoque.Designer.cs">
       <DependentUpon>Consultar Estoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fechamento\Caixa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fechamento\Caixa.Designer.cs">
-      <DependentUpon>Caixa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Fornecedor\CadastroDeFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,10 +234,10 @@
     <Compile Include="Fornecedor\ConsultarFornecedor.Designer.cs">
       <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entrar\Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entrar\Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionario\CadastroDeFuncionario.cs">
@@ -270,57 +252,22 @@
     <Compile Include="Funcionario\Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\NovoMenucs.cs">
+    <Compile Include="Menu\NovoMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modelos\NovoMenucs.Designer.cs">
-      <DependentUpon>NovoMenucs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modelos\Principal.cs">
+    <Compile Include="Menu\.Designer.cs">
+      <DependentUpon>NovoMenu.cs</DependentUpon>
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modelos\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Produto\CadastroDeProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produto\CadastroDeProdutos.Designer.cs">
-      <DependentUpon>CadastroDeProdutos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Produto\ConsultarProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produto\ConsultarProdutos.Designer.cs">
-      <DependentUpon>ConsultarProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web\ConsultarFale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Web\ConsultarFale.Designer.cs">
-      <DependentUpon>ConsultarFale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Web\Mensagem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Web\Mensagem.Designer.cs">
-      <DependentUpon>Mensagem.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Administraçao\ConsultaDeContas.resx">
+    <EmbeddedResource Include="Contas a pagar\ConsultaDeContas.resx">
       <DependentUpon>ConsultaDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administraçao\CadastroDeContas.resx">
+    <EmbeddedResource Include="Contas a pagar\CadastroDeContas.resx">
       <DependentUpon>CadastroDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cardapio\CadastroDeCardapio.resx">
-      <DependentUpon>CadastroDeCardapio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cardapio\ConsultaDeCardapio.resx">
-      <DependentUpon>ConsultaDeCardapio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Entrar\CriarUsuario.resx">
+    <EmbeddedResource Include="Login\CriarUsuario.resx">
       <DependentUpon>CriarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\CadastrarEstoque.resx">
@@ -329,16 +276,13 @@
     <EmbeddedResource Include="Estoque\Consultar Estoque.resx">
       <DependentUpon>Consultar Estoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fechamento\Caixa.resx">
-      <DependentUpon>Caixa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor\CadastroDeFornecedor.resx">
       <DependentUpon>CadastroDeFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornecedor\ConsultarFornecedor.resx">
       <DependentUpon>ConsultarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entrar\Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funcionario\CadastroDeFuncionario.resx">
@@ -347,17 +291,8 @@
     <EmbeddedResource Include="Funcionario\Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modelos\NovoMenucs.resx">
-      <DependentUpon>NovoMenucs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modelos\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Produto\CadastroDeProdutos.resx">
-      <DependentUpon>CadastroDeProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Produto\ConsultarProdutos.resx">
-      <DependentUpon>ConsultarProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="Menu\NovoMenu.resx">
+      <DependentUpon>NovoMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -369,12 +304,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Web\ConsultarFale.resx">
-      <DependentUpon>ConsultarFale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Web\Mensagem.resx">
-      <DependentUpon>Mensagem.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ChaveTemporaria.snk" />
     <None Include="CHURRASTRABALHODataSet.xsc">

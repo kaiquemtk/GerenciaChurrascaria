@@ -195,11 +195,7 @@ namespace TCCTH.Entrar
 
         }
     
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Modelos.Principal pr = new Modelos.Principal();
-            pr.Show();
-        }
+        
 
         private void Minimizar_Click(object sender, EventArgs e)
         {

@@ -47,7 +47,7 @@ namespace TCCTH.Administraçao
             if (sender == this.btnEditar || sender == this.btnPesquisar)
             {
                 cont.Codigo = Convert.ToInt32(this.dgvconta.CurrentRow.Cells[0].Value);
-                cont.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+                cont.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
 
                 cont.Text = "Alterar Cadastro De Conta";
 
@@ -60,7 +60,7 @@ namespace TCCTH.Administraçao
                     cont.txtpagamento.Enabled = false;
 
 
-                    cont.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Consulta);
+                    cont.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Consulta);
                     cont.Text = "Consultar Cadastro De Conta";
                 }
 
@@ -76,7 +76,7 @@ namespace TCCTH.Administraçao
            
             edit.txtIdcontas.Text = Convert.ToString(this.dgvconta.CurrentRow.Cells[0].Value);
             edit.Codigo = Convert.ToInt32(this.dgvconta.CurrentRow.Cells[0].Value);
-            edit.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+            edit.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
             // func.txtNomeProduto.Enabled = false;
             //func.bAlterarPrato.Visible = true;
             this.Hide();

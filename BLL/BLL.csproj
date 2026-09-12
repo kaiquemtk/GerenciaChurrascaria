@@ -56,17 +56,13 @@
     <Compile Include="Cardapio.cs" />
     <Compile Include="Cep.cs" />
     <Compile Include="Endereço.cs" />
-    <Compile Include="Fechamento.cs" />
-    <Compile Include="Pedido.cs" />
-    <Compile Include="Produto.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
-    <Compile Include="Funcoesgerais.cs" />
+    <Compile Include="ValidarCPF.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="PagarContas.cs" />
     <Compile Include="Estoque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

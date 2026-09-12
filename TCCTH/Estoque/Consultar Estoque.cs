@@ -56,7 +56,7 @@ namespace TCCTH.Estoque
             if (sender == this.btnEditar || sender == this.btnPesquisar)
             {
                 estoq.Codigo = Convert.ToInt32(this.dgvestoqu.CurrentRow.Cells[0].Value);
-                estoq.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+                estoq.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
                 // func.txtNomeProduto.Enabled = false;
                 //func.bAlterarPrato.Visible = true;
                 //fornec.Show();
@@ -71,7 +71,7 @@ namespace TCCTH.Estoque
                     estoq.cboproduto.Enabled = false;
                     estoq.txtNome.Enabled = false;
 
-                    estoq.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Consulta);
+                    estoq.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Consulta);
                     estoq.Text = "Consultar Cadastro De Estoque";
 
                     estoq.Show();
@@ -105,7 +105,7 @@ namespace TCCTH.Estoque
             CadastrarEstoque est = new CadastrarEstoque();
             est.txtidestoq.Text = Convert.ToString(this.dgvestoqu.CurrentRow.Cells[0].Value);
             est.Codigo = Convert.ToInt32(this.dgvestoqu.CurrentRow.Cells[0].Value);
-            est.Operação = Convert.ToByte(BLL.Funcoesgerais.Operação.Alteracao);
+            est.Operação = Convert.ToByte(BLL.ValidarCPF.Operação.Alteracao);
 
 
 

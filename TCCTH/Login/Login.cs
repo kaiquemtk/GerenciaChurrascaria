@@ -83,7 +83,7 @@ namespace TCCTH
                             princip.btnFornecedor.Enabled = false;
                             princip.btnEstoque.Enabled = false;
                             princip.btnConta.Enabled = false;
-                            princip.btncardapio.Enabled = false;
+                        
                             princip.button1.Enabled = false;
 
                             

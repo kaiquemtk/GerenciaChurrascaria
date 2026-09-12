@@ -64,7 +64,7 @@ namespace TCCTH.Administraçao
                 // CarregarCampos();
 
 
-                if (Operação != Convert.ToByte(BLL.Funcoesgerais.Operação.Inclusao))
+                if (Operação != Convert.ToByte(BLL.ValidarCPF.Operação.Inclusao))
                 {
                     BLL.PagarContas pag = new BLL.PagarContas();
                     SqlDataReader dr;

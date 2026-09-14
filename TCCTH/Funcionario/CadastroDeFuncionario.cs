@@ -1,14 +1,15 @@
-﻿using System;
+﻿using DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using DAO;
 //using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
+using System.Windows.Forms;
 namespace TCCTH.Funcionario
 
 {
@@ -19,7 +20,7 @@ namespace TCCTH.Funcionario
             InitializeComponent();
             groupBox1.Visible = false;
             txtidendereco.Visible = false;
-            
+
         }
 
         private int enderecoid;
@@ -130,7 +131,7 @@ namespace TCCTH.Funcionario
                     func.Bairro1 = this.txtBairro1.Text.ToString();
                     func.Uf1 = this.txtUf1.Text.ToString();
                     func.CEP1 = this.txtCep1.Text.ToString().Replace("-", "");
-                    
+
 
                     if (rdbFeminino.Checked)
                     {
@@ -201,7 +202,7 @@ namespace TCCTH.Funcionario
 
 
 
-                   
+
                     func.IncluirFUNC();
 
 
@@ -212,7 +213,7 @@ namespace TCCTH.Funcionario
                         txtRg1.BackColor = Color.Blue;
 
                     }
-                    
+
 
                     MessageBox.Show("Funcionario Cadastrado");
 
@@ -235,7 +236,7 @@ namespace TCCTH.Funcionario
                     endere.UF = this.txtUf1.Text.ToString();
                     endere.Cidade = this.txtCidade1.Text;
                     endere.Logradouro = this.txtEndereço1.Text.ToString();
-                   // func.Endereço = this.txtEndereço1.Text.ToString();
+                    // func.Endereço = this.txtEndereço1.Text.ToString();
                     func.Email = this.txtEmail.Text.ToString();
                     func.Data_nascimento = Convert.ToDateTime(this.txtDataNasc.Text);
                     func.cpf = this.txtCpf.Text.ToString();
@@ -322,7 +323,7 @@ namespace TCCTH.Funcionario
             Funcionario.Consulta cons = new Funcionario.Consulta();
             this.Hide();
             cons.Show();
-            
+
         }
 
         private void txtUf1_TextChanged(object sender, EventArgs e)
@@ -372,7 +373,10 @@ namespace TCCTH.Funcionario
         {
             try
             {
-                this.cargoTableAdapter.Fill(this.cHURRASTRABALHODataSet11.Cargo);
+                // OBS: Essa linha foi removida porque o Fill do TableAdapter trazia TODOS os
+                // cargos (inclusive os desativados/status_Cargo = 0), sobrescrevendo o
+                // carregamento correto e filtrado que já é feito por Carregarcombocargo().
+                // this.cargoTableAdapter.Fill(this.cHURRASTRABALHODataSet11.Cargo);
 
                 if (Operação != Convert.ToByte(BLL.ValidarCPF.Operação.Inclusao))
                 {
@@ -446,13 +450,13 @@ namespace TCCTH.Funcionario
 
         private void txtNumero1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
 
         }
 
         private void txtDataNasc_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            
+
         }
 
         private void txtCpf_TextChanged(object sender, EventArgs e)
@@ -486,15 +490,15 @@ namespace TCCTH.Funcionario
 
         private void txtDataNasc_Leave(object sender, EventArgs e)
         {
-            if (ValidarData.ValidarData123( txtDataNasc.Text))
+            if (ValidarData.ValidarData123(txtDataNasc.Text))
             {
 
             }
             else
-           {
+            {
                 MessageBox.Show("DATA INFORMADO É INVÁLIDO! POR FAVOR, VERIFIQUE SE DIGITOU CORRETAMENTE E TENTE NOVAMENTE!", "Mensagem");
 
-           }
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -568,11 +572,14 @@ namespace TCCTH.Funcionario
 
         private void Carregarcombocargo()
         {
-
             try
             {
                 BLL.Funcionario Carg = new BLL.Funcionario();
-                this.cbocargo.DataSource = Carg.ListarCarg("").Tables[0];
+                DataTable tabela = Carg.ListarCarg("").Tables[0];
+
+             
+
+                this.cbocargo.DataSource = tabela;
                 this.cbocargo.DisplayMember = "nome";
                 this.cbocargo.ValueMember = "Id_Cargo";
                 cbocargo.SelectedIndex = -1;
@@ -580,9 +587,9 @@ namespace TCCTH.Funcionario
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
         }
+        
 
         private void txtNome1_TextChanged(object sender, EventArgs e)
         {
@@ -613,7 +620,7 @@ namespace TCCTH.Funcionario
 
         private void txtSalario1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar));
+            if (!char.IsNumber(e.KeyChar)) ;
 
         }
 
@@ -647,9 +654,9 @@ namespace TCCTH.Funcionario
             else
             {
                 MessageBox.Show("CPF INFORMADO É INVÁLIDO! POR FAVOR, VERIFIQUE SE DIGITOU CORRETAMENTE E TENTE NOVAMENTE!", "Mensagem");
-                
+
             }
-            
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -722,14 +729,4 @@ namespace TCCTH.Funcionario
 
         }
     }
-    }
-
-
-
-
-    
-
-
-
-
-    
+}

@@ -700,14 +700,10 @@ namespace BLL
         }
         public DataSet ListarCarg(string texto)
         {
-
-            SQL = "  SELECT nome,status_Cargo FROM Cargo where  status_Cargo = 1";
-
+            SQL = "SELECT Id_Cargo, nome, status_Cargo FROM Cargo where status_Cargo = 1";
             return C.retornarDataSet(SQL);
-
-
-
         }
+        
 
 
         public void incluirLogin()

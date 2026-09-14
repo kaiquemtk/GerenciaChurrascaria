@@ -772,7 +772,7 @@
             this.Name = "CadastroDeFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro De Funcionario";
-            this.Load += new System.EventHandler(this.CarregarCampos);
+            this.Load += new System.EventHandler(this.CadastroDeFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource1)).EndInit();

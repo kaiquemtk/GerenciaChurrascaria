@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
-
 using System.Data.SqlClient;
-
 using System.Data;
-
 
 namespace BLL
 {
     public class PagarContas
-
-
     {
         private static string SQL;
         private int id;
@@ -20,133 +16,91 @@ namespace BLL
         DAO.ConexaoString C = new DAO.ConexaoString();
 
         private string dataDoPagamento;
-
-
-
         private string pagamento;
-
-
         private int idcontaa;
-
         private int idconta;
-
         private string valor;
-
-
-
         private string data;
-
-
-
-
         private string statusconta;
-
-
-
         private string nome;
+        private int? idfuncionario;
 
         public string Data
         {
-            get
-            {
-                return data;
-            }
-
-            set
-            {
-                data = value;
-            }
+            get { return data; }
+            set { data = value; }
         }
 
         public string Nome
         {
-            get
-            {
-                return nome;
-            }
-
-            set
-            {
-                nome = value;
-            }
+            get { return nome; }
+            set { nome = value; }
         }
 
         public string Valor
         {
-            get
-            {
-                return valor;
-            }
-
-            set
-            {
-                valor = value;
-            }
+            get { return valor; }
+            set { valor = value; }
         }
 
         public string Pagamento12
         {
-            get
-            {
-                return pagamento;
-            }
-
-            set
-            {
-                pagamento = value;
-            }
+            get { return pagamento; }
+            set { pagamento = value; }
         }
 
         public string Statusconta
         {
-            get
-            {
-                return statusconta;
-            }
-
-            set
-            {
-                statusconta = value;
-            }
+            get { return statusconta; }
+            set { statusconta = value; }
         }
 
         public int Idconta
         {
-            get
-            {
-                return idconta;
-            }
-
-            set
-            {
-                idconta = value;
-            }
+            get { return idconta; }
+            set { idconta = value; }
         }
 
         public int Idcontaa
         {
-            get
-            {
-                return idcontaa;
-            }
-
-            set
-            {
-                idcontaa = value;
-            }
+            get { return idcontaa; }
+            set { idcontaa = value; }
         }
 
         public string DataDoPagamento
         {
-            get
+            get { return dataDoPagamento; }
+            set { dataDoPagamento = value; }
+        }
+
+        public int? Idfuncionario
+        {
+            get { return idfuncionario; }
+            set { idfuncionario = value; }
+        }
+
+        // A tela manda a data sem as barras (ddMMyyyy). Aqui vira yyyyMMdd, que o SQL Server
+        // entende em qualquer idioma. Vazio ou inválido continua virando 01/01/1900 (não pago).
+        private string FormatarDataPagamento()
+        {
+            DateTime d;
+
+            if (DateTime.TryParseExact(DataDoPagamento, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out d) && d.Year > 1900)
             {
-                return dataDoPagamento;
+                return d.ToString("yyyyMMdd");
             }
 
-            set
+            return "19000101";
+        }
+
+        private string FuncionarioSQL()
+        {
+            if (Idfuncionario.HasValue)
             {
-                dataDoPagamento = value;
+                return Idfuncionario.Value.ToString();
             }
+
+            return "NULL";
         }
 
         public void IncluirConta()
@@ -154,7 +108,7 @@ namespace BLL
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "INSERT INTO ContaPagar  (data_vencimento,nome_conta,valor,status_conta,data_pagamento) values( '" + Data + "','" + Nome + "','" + Valor + "','1','" + DataDoPagamento + "')";
+                SQL = "INSERT INTO ContaPagar  (data_vencimento,nome_conta,valor,status_conta,data_pagamento,Id_Funcionario) values( '" + Data + "','" + Nome + "','" + Valor + "','1','" + FormatarDataPagamento() + "'," + FuncionarioSQL() + ")";
                 c.ExecutarComando(SQL);
             }
             catch (Exception ex)
@@ -162,19 +116,13 @@ namespace BLL
                 throw ex;
             }
         }
-
-
 
         public void Alterar()
         {
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-
-
-
-                SQL = "UPDATE  ContaPagar SET data_vencimento = '" + Data + "',  nome_conta = '" + Nome + "', valor = '" + Valor + "', data_pagamento ='" + DataDoPagamento + "'    WHERE Id_ContaPagar = " + Idconta;
-
+                SQL = "UPDATE  ContaPagar SET data_vencimento = '" + Data + "',  nome_conta = '" + Nome + "', valor = '" + Valor + "', data_pagamento ='" + FormatarDataPagamento() + "', Id_Funcionario = " + FuncionarioSQL() + "    WHERE Id_ContaPagar = " + Idconta;
                 c.ExecutarComando(SQL);
             }
             catch (Exception ex)
@@ -182,9 +130,6 @@ namespace BLL
                 throw ex;
             }
         }
-
-
-
 
         public DataSet ListarContas(string texto)
         {
@@ -192,10 +137,16 @@ namespace BLL
             SQL = "SELECT Id_ContaPagar,data_vencimento,nome_conta,valor,status_conta,data_pagamento  FROM ContaPagar where status_conta = 1 ";
 
             return c.RetornarDataSet(SQL);
-
         }
 
-
+        public DataSet ListarContasCompleto()
+        {
+            DAO.ConexaoString c = new DAO.ConexaoString();
+            string sql = "SELECT c.Id_ContaPagar, c.data_vencimento, c.nome_conta, c.valor, c.data_pagamento, f.nome AS funcionario " +
+                         "FROM ContaPagar c LEFT JOIN Funcionario f ON f.Id_Funcionario = c.Id_Funcionario " +
+                         "WHERE c.status_conta = 1";
+            return c.RetornarDataSet(sql);
+        }
 
         public SqlDataReader Consultar()
         {
@@ -209,12 +160,24 @@ namespace BLL
             {
                 throw ex;
             }
+        }
 
+        public void MarcarComoPaga()
+        {
+            try
+            {
+                DAO.ConexaoString c = new DAO.ConexaoString();
+                string sql = "UPDATE ContaPagar SET data_pagamento = CONVERT(date, GETDATE()) WHERE Id_ContaPagar = " + Idconta;
+                c.ExecutarComando(sql);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void excluir()
         {
-
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
@@ -225,12 +188,6 @@ namespace BLL
             {
                 throw ex;
             }
-
-
-
-
         }
-
     }
 }
-

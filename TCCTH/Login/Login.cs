@@ -26,96 +26,62 @@ namespace TCCTH
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (txtNome.Text == string.Empty)
+                {
+                    MessageBox.Show("Campo Usuario vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (txtSenha.Text == string.Empty)
+                {
+                    MessageBox.Show("Campo Senha vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 Tentativas++;
 
                 if (Tentativas <= 3)
                 {
-
-
-                    bool resultadoPesquisa = false;
                     BLL.Login objLogin = new BLL.Login();
+                    objLogin.Nome = txtNome.Text.ToUpper();
+                    objLogin.Senha = txtSenha.Text;
 
-                    string usuario = txtNome.Text.ToUpper();
+                    bool resultadoPesquisa = objLogin.Logar();
 
-                    string senha = txtSenha.Text;
-
-
-
-                    objLogin.Nome = usuario;
-                    objLogin.Senha = senha;
-
-                    if (txtNome.Text == string.Empty)
-                    {
-                        MessageBox.Show("Campo Usuario vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                    else if (txtSenha.Text == string.Empty)
-                    {
-                        MessageBox.Show("Campo Senha vazio!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                   
-
-                        resultadoPesquisa = objLogin.Logar();
                     if (resultadoPesquisa == true)
                     {
-                        txtidlogin.Text = Convert.ToString(objLogin.Idfuncionario);
-                        if (objLogin.IdNivelAcesso ==1)
-                        {
-                            Modelos.NovoMenu princip = new Modelos.NovoMenu(txtidlogin.Text);
-                           
-                            this.Hide();
-                            princip.Show();
-                        }
-                        if (objLogin.IdNivelAcesso == 2)
+                        if (objLogin.IdNivelAcesso == 1 || objLogin.IdNivelAcesso == 2)
                         {
                             txtidlogin.Text = Convert.ToString(objLogin.Idfuncionario);
-                            Modelos.NovoMenu princip = new Modelos.NovoMenu(txtidlogin.Text);
-                            princip.btnFuncionario.Enabled = false;
-                           
-                            princip.btnFornecedor.Enabled = false;
-                            princip.btnEstoque.Enabled = false;
-                            princip.btnConta.Enabled = false;
-                        
-                            princip.button1.Enabled = false;
-
-                            
-                            
-
-
+                            Modelos.NovoMenu princip = new Modelos.NovoMenu(txtidlogin.Text, objLogin.IdNivelAcesso);
                             this.Hide();
                             princip.Show();
-                            
                         }
-                       // else
-                        //{
-                            //MessageBox.Show("USUÁRIO/SENHA INCORRETO OU VOCÊ NÃO TEM ACESSO AO SISTEMA");
-                       // }
-                                
-                                }
-
-                 }
-                  else
-                 {
-                            MessageBox.Show("USUÁRIO/SENHA INCORRETO OU VOCÊ NÃO TEM ACESSO AO SISTEMA");
-                   // MessageBox.Show("");
-
+                        else
+                        {
+                            MessageBox.Show("USUÁRIO NÃO TEM NÍVEL DE ACESSO VÁLIDO AO SISTEMA");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("USUÁRIO/SENHA INCORRETO OU VOCÊ NÃO TEM ACESSO AO SISTEMA");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NÚMERO MÁXIMO DE TENTATIVAS EXCEDIDO");
                 }
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
-
-            } }
+            }
+        }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
@@ -142,12 +108,10 @@ namespace TCCTH
             if (this.checkBox1.Checked)
             {
                 this.txtSenha.PasswordChar = '\0';
-
-
             }
             else
             {
-                    this.txtSenha.PasswordChar = '*';
+                this.txtSenha.PasswordChar = '*';
             }
         }
 
@@ -158,10 +122,7 @@ namespace TCCTH
 
         private void btnEntrar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            {
-                
-                
-            }
+
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -184,12 +145,9 @@ namespace TCCTH
             this.Close();
         }
 
-       
-
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
     }
-    }
-    
+}

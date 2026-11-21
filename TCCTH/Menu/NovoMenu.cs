@@ -13,6 +13,10 @@ namespace TCCTH.Modelos
 {
     public partial class NovoMenu : Form
     {
+        // Guarda o nível de acesso do usuário logado durante toda a sessão
+        // 1 = Administrador | 2 = Comum
+        public static int NivelAcessoLogado { get; set; } = 2;
+
         public NovoMenu()
         {
             InitializeComponent();
@@ -20,10 +24,17 @@ namespace TCCTH.Modelos
             txtidlogin.Visible = false;
         }
 
-        public NovoMenu(string valor)
+        public NovoMenu(string valor, int nivelAcesso = 0)
         {
             InitializeComponent();
+            txtidlog.Visible = false;
+            txtidlogin.Visible = false;
             txtidlogin.Text = valor;
+
+            if (nivelAcesso == 1 || nivelAcesso == 2)
+            {
+                NivelAcessoLogado = nivelAcesso;
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -31,7 +42,26 @@ namespace TCCTH.Modelos
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
+        private void AplicarNivelDeAcesso()
+        {
+            bool ehAdmin = (NivelAcessoLogado == 1);
 
+            // Garante que todos fiquem visíveis (sem buracos no menu)
+            btnFuncionario.Visible = true;
+            btnFornecedor.Visible = true;
+            btnEstoque.Visible = true;
+            btnConta.Visible = true;
+            button1.Visible = true;
+
+            // Permissões por nível:
+            // true = liberado para todos | ehAdmin = liberado só para Administrador (1)
+            btnFornecedor.Enabled = true;
+            btnEstoque.Enabled = true;
+
+            btnFuncionario.Enabled = ehAdmin;
+            btnConta.Enabled = ehAdmin;
+            button1.Enabled = ehAdmin; // Criar Usuário
+        }
 
         private void btnslide_Click(object sender, EventArgs e)
         {
@@ -42,13 +72,11 @@ namespace TCCTH.Modelos
         {
             if (MenuVertical.Width == 250)
             {
-
                 MenuVertical.Width = 52;
             }
             else
-                MenuVertical.Width = 250;
             {
-
+                MenuVertical.Width = 250;
             }
         }
 
@@ -60,32 +88,27 @@ namespace TCCTH.Modelos
         private void Maximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            // Restaurar.Visible = true;
-            //Maximizar.Visible = false;
-
         }
 
         private void Restaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            //Restaurar.Visible = false;
-           // Maximizar.Visible = true;
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-    
+
         private void MenuDeCima_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void MenuDeCima_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -97,10 +120,8 @@ namespace TCCTH.Modelos
 
         private void AbrirForm(object formhijo)
         {
-            
-            
-        }
 
+        }
 
         private void NovoMenu_Load(object sender, EventArgs e)
         {
@@ -109,18 +130,17 @@ namespace TCCTH.Modelos
 
             dr = log.Consultar();
             if (dr.Read())
-
             {
                 this.txtidlog.Text = dr["Id_Funcionario"].ToString();
                 this.txtidlogin.Text = dr["Id_Login"].ToString();
-
             }
+
+            AplicarNivelDeAcesso();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Funcionario.Consulta consultafuncionario = new Funcionario.Consulta();
-            NovoMenu form = new NovoMenu();
             this.Hide();
             consultafuncionario.Show();
         }
@@ -132,8 +152,6 @@ namespace TCCTH.Modelos
             consultarforne.Show();
         }
 
-        
-
         private void button5_Click(object sender, EventArgs e)
         {
             Administraçao.ConsultaDeContas contas = new Administraçao.ConsultaDeContas();
@@ -141,11 +159,9 @@ namespace TCCTH.Modelos
             contas.Show();
         }
 
-        
-
-        
         private void button3_Click_1(object sender, EventArgs e)
         {
+            NivelAcessoLogado = 2;
             Login log = new Login();
             this.Hide();
             log.Show();
@@ -166,12 +182,16 @@ namespace TCCTH.Modelos
         private void Minimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void Fechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

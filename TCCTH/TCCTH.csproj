@@ -204,6 +204,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EstiloGrid.cs" />
     <Compile Include="Login\CriarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

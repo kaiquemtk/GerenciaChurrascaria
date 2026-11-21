@@ -24,6 +24,9 @@ namespace TCCTH.Administraçao
 
         private void ConsultaDeContas_Load(object sender, EventArgs e)
         {
+            dgvconta.Left = 20;
+            dgvconta.Width = this.ClientSize.Width - 40;
+
             CriarControlesNovos();
             dgvconta.CellFormatting += dgvconta_CellFormatting;
             CarregarGrid();
@@ -86,10 +89,7 @@ namespace TCCTH.Administraçao
 
         private void FormatarGrid()
         {
-            dgvconta.AllowUserToAddRows = false;
-            dgvconta.ReadOnly = true;
-            dgvconta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvconta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            EstiloGrid.Aplicar(dgvconta);
 
             dgvconta.Columns["Id_ContaPagar"].Visible = false;
             dgvconta.Columns["data_vencimento"].HeaderText = "Vencimento";

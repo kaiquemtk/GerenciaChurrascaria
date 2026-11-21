@@ -711,7 +711,7 @@ namespace BLL
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "INSERT INTO tb_Login (status_Login,senha,usuario,nivelAcesso,Id_Funcionario,Id_NivelDeAcesso) values( '1','" + senhaLogin + "','" + usuario + "','1','" + Id + "','" + Idnivelacesso + "')";
+                SQL = "INSERT INTO tb_Login (status_Login, senha, usuario, nivelAcesso, Id_Funcionario) values ('1', '" + senhaLogin + "', '" + usuario + "', '" + Idnivelacesso + "', " + Id + ")";
                 c.ExecutarComando(SQL);
             }
             catch (Exception ex)

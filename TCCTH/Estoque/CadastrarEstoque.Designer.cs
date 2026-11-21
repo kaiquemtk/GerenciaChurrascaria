@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarEstoque));
             this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtcompra = new System.Windows.Forms.MaskedTextBox();
@@ -45,7 +44,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cboproduto = new System.Windows.Forms.ComboBox();
+            this.cardapioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cHURRASTRABALHODataSet21 = new TCCTH.CHURRASTRABALHODataSet21();
             this.produtoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.cHURRASTRABALHODataSet19 = new TCCTH.CHURRASTRABALHODataSet19();
             this.produtoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -67,8 +67,6 @@
             this.cHURRASTRABALHODataSet7 = new TCCTH.CHURRASTRABALHODataSet7();
             this.produtoTableAdapter3 = new TCCTH.CHURRASTRABALHODataSet19TableAdapters.ProdutoTableAdapter();
             this.fornecedorTableAdapter2 = new TCCTH.CHURRASTRABALHODataSet20TableAdapters.FornecedorTableAdapter();
-            this.cHURRASTRABALHODataSet21 = new TCCTH.CHURRASTRABALHODataSet21();
-            this.cardapioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cardapioTableAdapter = new TCCTH.CHURRASTRABALHODataSet21TableAdapters.CardapioTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -78,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).BeginInit();
@@ -90,32 +90,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantidade.Location = new System.Drawing.Point(523, 107);
+            this.txtQuantidade.Location = new System.Drawing.Point(784, 165);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(48, 23);
+            this.txtQuantidade.Size = new System.Drawing.Size(70, 30);
             this.txtQuantidade.TabIndex = 6;
             this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged);
             this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(27, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = " Produto";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -123,9 +109,10 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(27, 185);
+            this.label2.Location = new System.Drawing.Point(46, 233);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 19);
+            this.label2.Size = new System.Drawing.Size(138, 26);
             this.label2.TabIndex = 9;
             this.label2.Text = "Fornecedor";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -136,9 +123,10 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
             this.label5.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(27, 225);
+            this.label5.Location = new System.Drawing.Point(46, 283);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 19);
+            this.label5.Size = new System.Drawing.Size(199, 26);
             this.label5.TabIndex = 12;
             this.label5.Text = "Data Da Compra";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -146,10 +134,11 @@
             // txtcompra
             // 
             this.txtcompra.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcompra.Location = new System.Drawing.Point(166, 223);
+            this.txtcompra.Location = new System.Drawing.Point(253, 283);
+            this.txtcompra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcompra.Mask = "00/00/0000";
             this.txtcompra.Name = "txtcompra";
-            this.txtcompra.Size = new System.Drawing.Size(96, 23);
+            this.txtcompra.Size = new System.Drawing.Size(142, 30);
             this.txtcompra.TabIndex = 13;
             this.txtcompra.ValidatingType = typeof(System.DateTime);
             this.txtcompra.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
@@ -161,9 +150,10 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
             this.label6.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(312, 111);
+            this.label6.Location = new System.Drawing.Point(468, 171);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 19);
+            this.label6.Size = new System.Drawing.Size(286, 26);
             this.label6.TabIndex = 14;
             this.label6.Text = "Quantidade Em Estoque";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -173,9 +163,10 @@
             this.cbofornecedor.DataSource = this.fornecedorBindingSource2;
             this.cbofornecedor.DisplayMember = "nome_fantasia";
             this.cbofornecedor.FormattingEnabled = true;
-            this.cbofornecedor.Location = new System.Drawing.Point(166, 183);
+            this.cbofornecedor.Location = new System.Drawing.Point(249, 235);
+            this.cbofornecedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbofornecedor.Name = "cbofornecedor";
-            this.cbofornecedor.Size = new System.Drawing.Size(135, 21);
+            this.cbofornecedor.Size = new System.Drawing.Size(200, 28);
             this.cbofornecedor.TabIndex = 20;
             this.cbofornecedor.ValueMember = "Id_Fornecedor";
             this.cbofornecedor.SelectedIndexChanged += new System.EventHandler(this.cbofornecedor_SelectedIndexChanged);
@@ -207,9 +198,10 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
-            this.button1.Location = new System.Drawing.Point(451, 319);
+            this.button1.Location = new System.Drawing.Point(676, 491);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 75);
+            this.button1.Size = new System.Drawing.Size(108, 115);
             this.button1.TabIndex = 19;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -221,9 +213,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
-            this.button2.Location = new System.Drawing.Point(546, 319);
+            this.button2.Location = new System.Drawing.Point(819, 491);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 75);
+            this.button2.Size = new System.Drawing.Size(112, 115);
             this.button2.TabIndex = 16;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -235,9 +228,10 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(353, 319);
+            this.btnCadastrar.Location = new System.Drawing.Point(530, 491);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 75);
+            this.btnCadastrar.Size = new System.Drawing.Size(112, 115);
             this.btnCadastrar.TabIndex = 15;
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.button1_Click);
@@ -245,24 +239,23 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 82);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(609, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(914, 400);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // cboproduto
+            // cardapioBindingSource
             // 
-            this.cboproduto.DataSource = this.cardapioBindingSource;
-            this.cboproduto.DisplayMember = "nome";
-            this.cboproduto.FormattingEnabled = true;
-            this.cboproduto.Location = new System.Drawing.Point(166, 147);
-            this.cboproduto.Name = "cboproduto";
-            this.cboproduto.Size = new System.Drawing.Size(135, 21);
-            this.cboproduto.TabIndex = 21;
-            this.cboproduto.ValueMember = "Id_Cardapio";
-            this.cboproduto.SelectedIndexChanged += new System.EventHandler(this.cboproduto_SelectedIndexChanged);
+            this.cardapioBindingSource.DataMember = "Cardapio";
+            this.cardapioBindingSource.DataSource = this.cHURRASTRABALHODataSet21;
+            // 
+            // cHURRASTRABALHODataSet21
+            // 
+            this.cHURRASTRABALHODataSet21.DataSetName = "CHURRASTRABALHODataSet21";
+            this.cHURRASTRABALHODataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // produtoBindingSource3
             // 
@@ -314,9 +307,10 @@
             // 
             // txtidestoq
             // 
-            this.txtidestoq.Location = new System.Drawing.Point(468, 201);
+            this.txtidestoq.Location = new System.Drawing.Point(702, 309);
+            this.txtidestoq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtidestoq.Name = "txtidestoq";
-            this.txtidestoq.Size = new System.Drawing.Size(43, 20);
+            this.txtidestoq.Size = new System.Drawing.Size(62, 26);
             this.txtidestoq.TabIndex = 22;
             this.txtidestoq.TextChanged += new System.EventHandler(this.txtidestoq_TextChanged);
             // 
@@ -329,9 +323,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(31, 44);
+            this.label3.Location = new System.Drawing.Point(46, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 19);
+            this.label3.Size = new System.Drawing.Size(240, 26);
             this.label3.TabIndex = 23;
             this.label3.Text = "Cadastro de estoque";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -340,9 +335,10 @@
             // 
             this.Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Minimizar.Image")));
-            this.Minimizar.Location = new System.Drawing.Point(573, 12);
+            this.Minimizar.Location = new System.Drawing.Point(860, 18);
+            this.Minimizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Minimizar.Name = "Minimizar";
-            this.Minimizar.Size = new System.Drawing.Size(20, 20);
+            this.Minimizar.Size = new System.Drawing.Size(30, 31);
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Minimizar.TabIndex = 37;
             this.Minimizar.TabStop = false;
@@ -352,9 +348,10 @@
             // 
             this.Fechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Fechar.Image = ((System.Drawing.Image)(resources.GetObject("Fechar.Image")));
-            this.Fechar.Location = new System.Drawing.Point(601, 12);
+            this.Fechar.Location = new System.Drawing.Point(902, 18);
+            this.Fechar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Fechar.Name = "Fechar";
-            this.Fechar.Size = new System.Drawing.Size(20, 20);
+            this.Fechar.Size = new System.Drawing.Size(30, 31);
             this.Fechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Fechar.TabIndex = 36;
             this.Fechar.TabStop = false;
@@ -388,33 +385,25 @@
             // 
             this.fornecedorTableAdapter2.ClearBeforeFill = true;
             // 
-            // cHURRASTRABALHODataSet21
-            // 
-            this.cHURRASTRABALHODataSet21.DataSetName = "CHURRASTRABALHODataSet21";
-            this.cHURRASTRABALHODataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cardapioBindingSource
-            // 
-            this.cardapioBindingSource.DataMember = "Cardapio";
-            this.cardapioBindingSource.DataSource = this.cHURRASTRABALHODataSet21;
-            // 
             // cardapioTableAdapter
             // 
             this.cardapioTableAdapter.ClearBeforeFill = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(316, 184);
+            this.textBox1.Location = new System.Drawing.Point(474, 283);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 38;
             // 
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(166, 112);
+            this.txtNome.Location = new System.Drawing.Point(249, 172);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(135, 20);
+            this.txtNome.Size = new System.Drawing.Size(200, 26);
             this.txtNome.TabIndex = 39;
             // 
             // label4
@@ -423,24 +412,24 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(51)))), ((int)(((byte)(45)))));
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(31, 115);
+            this.label4.Location = new System.Drawing.Point(46, 177);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.Size = new System.Drawing.Size(76, 26);
             this.label4.TabIndex = 40;
             this.label4.Text = "Nome";
             // 
             // CadastrarEstoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(633, 401);
+            this.ClientSize = new System.Drawing.Size(950, 617);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.Minimizar);
             this.Controls.Add(this.Fechar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cboproduto);
             this.Controls.Add(this.cbofornecedor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -449,12 +438,12 @@
             this.Controls.Add(this.txtcompra);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtidestoq);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CadastrarEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro De Estoque";
@@ -464,6 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).EndInit();
@@ -476,15 +467,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHURRASTRABALHODataSet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -499,7 +487,6 @@
         public System.Windows.Forms.TextBox txtQuantidade;
         public System.Windows.Forms.MaskedTextBox txtcompra;
         public System.Windows.Forms.ComboBox cbofornecedor;
-        public System.Windows.Forms.ComboBox cboproduto;
         private CHURRASTRABALHODataSet6 cHURRASTRABALHODataSet6;
         private System.Windows.Forms.BindingSource produtoBindingSource1;
         private CHURRASTRABALHODataSet6TableAdapters.ProdutoTableAdapter produtoTableAdapter1;

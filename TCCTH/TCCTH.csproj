@@ -94,11 +94,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CHURRASTRABALHODataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CHURRASTRABALHODataSet10.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
-    </Compile>
     <Compile Include="CHURRASTRABALHODataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,26 +108,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CHURRASTRABALHODataSet13.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet14.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet15.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet17.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
     </Compile>
     <Compile Include="CHURRASTRABALHODataSet18.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -193,16 +168,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CHURRASTRABALHODataSet7.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet8.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CHURRASTRABALHODataSet9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="EstiloGrid.cs" />
     <Compile Include="Login\CriarUsuario.cs">
@@ -329,17 +294,6 @@
     <None Include="CHURRASTRABALHODataSet1.xss">
       <DependentUpon>CHURRASTRABALHODataSet1.xsd</DependentUpon>
     </None>
-    <None Include="CHURRASTRABALHODataSet10.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet10.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet10.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet10.xss">
-      <DependentUpon>CHURRASTRABALHODataSet10.xsd</DependentUpon>
-    </None>
     <None Include="CHURRASTRABALHODataSet11.xsc">
       <DependentUpon>CHURRASTRABALHODataSet11.xsd</DependentUpon>
     </None>
@@ -372,50 +326,6 @@
     </None>
     <None Include="CHURRASTRABALHODataSet13.xss">
       <DependentUpon>CHURRASTRABALHODataSet13.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet14.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet14.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet14.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet14.xss">
-      <DependentUpon>CHURRASTRABALHODataSet14.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet15.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet15.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet15.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet15.xss">
-      <DependentUpon>CHURRASTRABALHODataSet15.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet16.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet16.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet16.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet16.xss">
-      <DependentUpon>CHURRASTRABALHODataSet16.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet17.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet17.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet17.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet17.xss">
-      <DependentUpon>CHURRASTRABALHODataSet17.xsd</DependentUpon>
     </None>
     <None Include="CHURRASTRABALHODataSet18.xsc">
       <DependentUpon>CHURRASTRABALHODataSet18.xsd</DependentUpon>
@@ -548,28 +458,6 @@
     </None>
     <None Include="CHURRASTRABALHODataSet7.xss">
       <DependentUpon>CHURRASTRABALHODataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet8.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet8.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet8.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet8.xss">
-      <DependentUpon>CHURRASTRABALHODataSet8.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet9.xsc">
-      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
-    </None>
-    <None Include="CHURRASTRABALHODataSet9.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CHURRASTRABALHODataSet9.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CHURRASTRABALHODataSet9.xss">
-      <DependentUpon>CHURRASTRABALHODataSet9.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

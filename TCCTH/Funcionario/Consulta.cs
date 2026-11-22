@@ -333,10 +333,18 @@ namespace TCCTH.Funcionario
         {
             if (dgv.CurrentRow != null)
             {
-                BLL.Funcionario func = new BLL.Funcionario();
-                func.IdFuncionario = Convert.ToInt32(this.dgv.CurrentRow.Cells["id_funcionario"].Value);
-                func.excluir();
-                CarregarGridInicial();
+                DialogResult r = MessageBox.Show(
+                    "Deseja desativar este funcionário e bloquear o acesso dele ao sistema?",
+                    "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (r == DialogResult.Yes)
+                {
+                    BLL.Funcionario func = new BLL.Funcionario();
+                    func.IdFuncionario = Convert.ToInt32(this.dgv.CurrentRow.Cells["id_funcionario"].Value);
+                    func.excluir();
+                    MessageBox.Show("Funcionário desativado e acesso ao sistema bloqueado.");
+                    CarregarGridInicial();
+                }
             }
         }
 

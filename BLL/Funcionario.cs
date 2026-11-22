@@ -670,20 +670,26 @@ namespace BLL
         }
 
 
-        public void excluir() {
-
+        public void excluir()
+        {
             try
             {
                 DAO.ConexaoString c = new DAO.ConexaoString();
-                SQL = "UPDATE Funcionario SET status_Func = 0 WHERE Id_Funcionario = '" + _IdFuncionario + "'";
+
+                // 1) Desativa o funcionário (exclusão lógica)
+                SQL = "UPDATE Funcionario SET status_Func = 0 WHERE Id_Funcionario = " + _IdFuncionario;
+                c.ExecutarComando(SQL);
+
+                // 2) Bloqueia também o acesso dele ao sistema
+                SQL = "UPDATE tb_Login SET status_Login = 0 WHERE Id_Funcionario = " + _IdFuncionario;
                 c.ExecutarComando(SQL);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
+
         public void incluircargo()
         {
             try

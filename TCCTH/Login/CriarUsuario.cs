@@ -53,9 +53,9 @@ namespace TCCTH.Entrar
         {
             txtUsuario1.Clear();
             txtSenha.Clear();
-            
+
         }
-        
+
 
         private void CriarUsuario_Load(object sender, EventArgs e)
         {
@@ -92,8 +92,8 @@ namespace TCCTH.Entrar
 
         private void nada(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void button1_TextChanged(object sender, EventArgs e)
@@ -133,6 +133,7 @@ namespace TCCTH.Entrar
             comboBox2.DataSource = null;
 
             // 2. Preenche com os níveis de acesso manualmente
+            //    (índice 0 = Administrador -> nível 1 | índice 1 = Comum -> nível 2)
             comboBox2.Items.Clear();
             comboBox2.Items.Add("Administrador");
             comboBox2.Items.Add("Comum");
@@ -152,11 +153,10 @@ namespace TCCTH.Entrar
 
                 case 0:
 
-
                     if (txtUsuario1.Text == string.Empty)
                     {
                         MessageBox.Show("Campo Usuario não preenchido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtUsuario.BackColor = Color.NavajoWhite;
+                        txtUsuario1.BackColor = Color.NavajoWhite;
                         return;
 
                     }
@@ -164,38 +164,38 @@ namespace TCCTH.Entrar
                     if (txtSenha.Text == string.Empty)
                     {
                         MessageBox.Show("Campo Senha não preenchido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        txtSenha1.BackColor = Color.NavajoWhite;
+                        txtSenha.BackColor = Color.NavajoWhite;
                         return;
 
                     }
 
-                  
+                    if (cboFuncionario.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Selecione o funcionário", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
+                    if (comboBox2.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("Selecione o nível de acesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
                     func.Usuario = this.txtUsuario1.Text.ToString();
                     func.SenhaLogin = this.txtSenha.Text.ToString();
                     func.Id = Convert.ToInt32(cboFuncionario.SelectedValue);
-                    func.Idnivelacesso = Convert.ToInt32(comboBox2.SelectedValue);
-
-
-                    
+                    func.Idnivelacesso = comboBox2.SelectedIndex + 1;   // Administrador = 1, Comum = 2
 
                     func.incluirLogin();
 
-
-
                     MessageBox.Show("Login Cadastrado");
-
-
-
-
 
                     break;
             }
 
         }
-    
-        
+
+
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
@@ -259,5 +259,4 @@ namespace TCCTH.Entrar
 
         }
     }
-    }
-
+}
